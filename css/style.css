@@ -3,6 +3,7 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+
 /*BACKGROUND*/
 body {
   margin: 0;
@@ -11,12 +12,21 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  overflow-x: hidden;
+  position: relative;
+}
 
+/* фиксированный фон */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
   background-image: url('../img/1.jpg');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  z-index: -1; /* фон уходит за все элементы */
 }
+
 
 /*iPhone*/
 @supports (-webkit-touch-callout: none) {
@@ -29,6 +39,7 @@ body {
 body, .glass-container {
   font-size: clamp(16px, 2.5vw, 20px);
 }
+
 
 /*CONTAINER*/
 .glass-container {
@@ -43,6 +54,19 @@ body, .glass-container {
   border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
+/*CONTAINER SIZE*/
+@media (max-width: 600px) {
+  body {
+    padding: 40px 20px;
+  }
+
+  .glass-container {
+    padding: 20px;
+  }
+}
+
+
+/*TEXT*/
 h1, h2 {
   color: #2c2c2c;
   text-shadow: 0 1px 1px rgba(255,255,255,0.5);
@@ -71,13 +95,3 @@ small {
   color: #656565;
 }
 
-/*CONTAINER SIZE*/
-@media (max-width: 600px) {
-  body {
-    padding: 40px 20px;
-  }
-
-  .glass-container {
-    padding: 20px;
-  }
-}
