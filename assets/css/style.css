@@ -73,7 +73,7 @@ body, .glass-container {
 /*TEXT*/
 h1, h2 {
   color: #2c2c2c;
-  text-shadow: 0 1px 1px rgba(255,255,255,0.5);
+  text-shadow: 0 1px 1px rgba(255,255,255,10);
 }
 
 p, li, small {
@@ -89,6 +89,7 @@ ul {
 a {
   color: #005a8d;
   text-decoration: none;
+  text-shadow: 0 1px 1px rgba(255,255,255,5);
 }
 
 a:hover {
@@ -103,15 +104,15 @@ small {
 /*BUTTONS*/
 .poet-links {
   display: flex;
-  flex-direction: column; /* ставим в колонку */
+  flex-direction: column;
   gap: 15px;
-  align-items: center; /* выравнивание по центру */
+  align-items: center;
   margin-top: 30px;
 }
 
 .poet-btn {
   display: inline-block;
-  width: 250px; /* фиксированная ширина для аккуратности */
+  width: 250px;
   text-align: center;
   padding: 12px 20px;
   border-radius: 12px;
@@ -120,10 +121,15 @@ small {
   font-weight: bold;
   background: rgba(255, 255, 255, 0.15);
   color: #2c2c2c;
+  box-shadow: inset 0 2px 3px rgba(255,255,255,0.6),
+              inset 0 -2px 3px rgba(0,0,0,0.2);
   transition: all 0.3s ease;
 }
 
 .poet-btn:hover {
   background: rgba(255, 255, 255, 0.3);
   transform: translateY(-3px);
+  box-shadow: inset 0 2px 3px rgba(255,255,255,0.8), 
+              inset 0 -2px 3px rgba(0,0,0,0.3),
+              0 4px 6px rgba(0,0,0,0.2);
 }
